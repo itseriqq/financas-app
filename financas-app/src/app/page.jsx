@@ -1,7 +1,15 @@
-
+import FormF from '@/components/Forms/FormF';
+import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './globals.css'
+import './page.module.css'
 
 const Home = () => {
-  return <div>Hello World</div>;
+  return (
+    <>
+      <FormF></FormF>
+    </>
+  );
 };
 
 export default Home;
