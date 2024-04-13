@@ -1,6 +1,6 @@
 import React from 'react'
 import '@/app/globals.css'
-import styles from './FormF.css'
+import styles from '@/components/Forms/FormF.module.css'
 
 const FormF = () => {
   return (
@@ -8,25 +8,23 @@ const FormF = () => {
 
       <div className="row text-center mt-3">
         <div className="col-sm-12 col-md-6 col-lg-6">
-          <input type="text" className="preencher" placeholder="Valor" />
-          <input type="text" className="preencher" placeholder="Descrição" />
+          <input type="text" className={styles.preencher} placeholder="Valor" />
+          <input type="text" className={styles.preencher} placeholder="Descrição" />
         </div>
 
-        <div className="col-sm-12 col-md-3 col-lg-3">
-          <div className="radio-input">
-            <label>
-              <input type="radio" value="Entrada" name='escolha' />
-              Entrada
-            </label>
-            <label>
-              <input type="radio" value="Saída" name='escolha' />
-              Saída
-            </label>
+        <div className="col-sm-12 col-md-3 col-lg-3 ">
+          <div className={`${styles.choices} d-flex align-items-center justify-content-center `}>
+            
+              <input type="radio" className={styles.choices} value="Entrada" name='escolha' />
+              <span>Entrada</span>
+              <input type="radio" className={styles.choices} value="Saída" name='escolha' />
+              <span>Saídas</span>
+
           </div>
         </div>
         <div className="col-sm-12 col-md-3 col-lg-3">
           <div>
-            <button className="btn btn-dark ms-0" type="submit">Enviar</button>
+            <button className="btn btn-dark" type="submit">Enviar</button>
           </div>
         </div>
 

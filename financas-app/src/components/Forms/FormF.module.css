@@ -4,21 +4,19 @@
     width: 48%;
     margin: 3px 3px;
     padding: 0 3px;
+    border-radius: 8px;
+    border: 1px solid #232323;
   }
 
-  input::placeholder {
-    padding-left: 3px;
-    margin-left: 10px;
-  }
-
-  label {
-    margin-right: 10px;
-  }
-
-  .radio-input {
+  .radioinput {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     height: 100%;
+  }
+
+  .choices span{
+   margin-right: 15px;
+   padding: 5px;
   }
