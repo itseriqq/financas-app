@@ -1,0 +1,24 @@
+.preencher {
+    color: #232323;
+    outline: none;
+    width: 48%;
+    margin: 3px 3px;
+    padding: 0 3px;
+  }
+
+  input::placeholder {
+    padding-left: 3px;
+    margin-left: 10px;
+  }
+
+  label {
+    margin-right: 10px;
+  }
+
+  .radio-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+  }

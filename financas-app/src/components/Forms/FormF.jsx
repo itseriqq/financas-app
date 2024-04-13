@@ -1,40 +1,36 @@
 import React from 'react'
 import '@/app/globals.css'
-// import styles from './FormF.module.css'
+import styles from './FormF.css'
 
 const FormF = () => {
   return (
     <div className="container-fluid">
 
-      <div className="row text-center ps-2">
-        <div className="col-md-6">
-          <input type="text" id="preencher" placeholder="Valor" />
+      <div className="row text-center mt-3">
+        <div className="col-sm-12 col-md-6 col-lg-6">
+          <input type="text" className="preencher" placeholder="Valor" />
+          <input type="text" className="preencher" placeholder="Descrição" />
         </div>
-        <div className="col-md-6">
-          <input type="text" placeholder="Categoria" />
-        </div>
-      </div>
 
-      <div className="row text-center">
-        <div className="col-md-6">
-          <label>
-            <input type="radio" style={{ marginRight: '3px' }} value="Entrada" name='escolha' />
-            Entrada
-          </label>
+        <div className="col-sm-12 col-md-3 col-lg-3">
+          <div className="radio-input">
+            <label>
+              <input type="radio" value="Entrada" name='escolha' />
+              Entrada
+            </label>
+            <label>
+              <input type="radio" value="Saída" name='escolha' />
+              Saída
+            </label>
+          </div>
         </div>
-        <div className="col-md-6">
-          <label>
-            <input type="radio" style={{ marginRight: '3px' }} value="Saída" name='escolha' />
-            Saída
-          </label>
+        <div className="col-sm-12 col-md-3 col-lg-3">
+          <div>
+            <button className="btn btn-dark ms-0" type="submit">Enviar</button>
+          </div>
         </div>
-      </div>
-      <div className="row text-center">
-        <div className="col-md-12">
-          <button className="btn btn-dark" type="submit">Enviar</button>
-        </div>
-      </div>
 
+      </div>
     </div>
 
   )
