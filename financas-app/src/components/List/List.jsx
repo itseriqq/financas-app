@@ -6,26 +6,19 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import React from 'react'
 
-const List = () => {
+const List = ({ itens }) => {
     return (
         <div>
             <Container>
                 <Row>
-                    <Col md={12}> 
+                    <Col md={12}>
                         <ul className={styles.list}>
                             <li className={styles.item}>
                                 <Row>
                                     <Col sm={5} md={7} lg={7} className={styles.info}>
-                                        <div className={styles.texto}>Texto</div>
-                                        <div className={styles.texto}>icone</div>
-                                    </Col>
-                                </Row>
-                            </li>
-                            <li className={styles.item}>
-                                <Row>
-                                    <Col sm={5} md={7} lg={7} className={styles.info}>
-                                        <div className={styles.texto}>Texto</div>
-                                        <div className={styles.texto}>icone</div>
+                                        <div className={styles.texto}>{item.valor}</div>
+                                        <div className={styles.texto}>{item.descricao}</div>
+                                        <div className={styles.texto}>{item.tipo}</div>
                                     </Col>
                                 </Row>
                             </li>
