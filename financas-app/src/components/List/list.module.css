@@ -1,0 +1,29 @@
+.list {
+    list-style-type: none;
+    margin-top: 10px;
+    margin-left: -30px;
+}
+
+.item {
+    font-size: 14px;
+    color: white;
+    height: 40px;
+    background-color: #12343b;
+    border-radius: 8px;
+    position: relative;
+    margin-top: 10px;
+}
+
+.texto {
+    padding-left: 10px;
+    margin-right: 10px;
+}
+
+.item .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 25%;
+    position: absolute;
+    width: 100%;
+}

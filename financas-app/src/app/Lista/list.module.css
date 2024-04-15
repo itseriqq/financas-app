@@ -1,0 +1,11 @@
+.list {
+    list-style-type: none;
+    margin-right: 30px;
+}
+
+.item {
+    font-size: 14px;
+    color: white;
+    height: 40px;
+    background-color: #12343b;
+}
