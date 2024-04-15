@@ -7,13 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import React from 'react'
 
-const Status = () => {
+const Status = ({titulo, valor, icone}) => {
   return (
-    <div>
-
-      <Container>
-        <Row className='mt-3'>
-
 
           <Col sm={12} md={4} lg={4} className='mt-3'>
             <div className={`${styles.card} rounded`}>
@@ -22,65 +17,21 @@ const Status = () => {
               <Row className='pt-3'>
                 <Col md={12}>
                   <div className="text-center">
-                    <h1>Entradas</h1>
+                    <h1>{titulo}</h1>
                   </div>
                 </Col>
               </Row>
               <Row className='text-center mt-4'>
                 <Col md={6}>
-                  <h2>Valor</h2>
+                  <h2>{valor}</h2>
                 </Col>
                 <Col md={6}>
-                  <h2>Icone</h2>
+                  <h2>{icone}</h2>
                 </Col>
               </Row>
             </div>
           </Col>
 
-          <Col sm={12} md={4} lg={4} className='mt-3'>
-            <div className={`${styles.card} rounded`}>
-              <Row className='pt-3'>
-                <Col md={12}>
-                  <div className="text-center">
-                    <h1>Saídas</h1>
-                  </div>
-                </Col>
-              </Row>
-              <Row className='text-center mt-4'>
-                <Col md={6}>
-                  <h2>Valor</h2>
-                </Col>
-                <Col md={6}>
-                  <h2>Icone</h2>
-                </Col>
-              </Row>
-            </div>
-          </Col>
-          <Col sm={12} md={4} lg={4} className='mt-3'>
-            <div className={`${styles.card} rounded`}>
-              <Row className='pt-3'>
-                <Col md={12}>
-                  <div className="text-center">
-                    <h1>Total</h1>
-                  </div>
-                </Col>
-              </Row>
-              <Row className='text-center mt-4'>
-                <Col md={6}>
-                  <h2>Valor</h2>
-                </Col>
-                <Col md={6}>
-                  <h2>Icone</h2>
-                </Col>
-              </Row>
-            </div>
-          </Col>
-
-
-
-        </Row>
-      </Container>
-    </div>
   )
 }
 

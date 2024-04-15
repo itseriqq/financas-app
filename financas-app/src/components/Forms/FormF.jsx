@@ -10,14 +10,14 @@ const FormF = () => {
   return (
     <Container>
       <Row className='text-center mt-3'>
-
+        
         <Col sm={12} md={7} lg={7}>
           <input type="text" className={styles.preencher} placeholder="Valor" />
           <input type="text" className={styles.preencher} placeholder="Descrição" />
         </Col>
 
         <Col sm={12} md={2} lg={2}>
-          <div className={`${styles.choices} d-flex align-items-center justify-content-center `}>
+          <div className={`${styles.choices} d-flex align-items-center justify-content-center`}>
 
             <input type="radio" className={styles.choices} value="Entrada" name='escolha' />
             <span>Entrada</span>
@@ -28,8 +28,8 @@ const FormF = () => {
         </Col>
 
         <Col sm={12} md={3} lg={3}>
-          <div>
-            <button className="btn btn-dark" type="submit">Enviar</button>
+          <div className={styles.envio}>
+            <button className="btn btn-light" type="submit">Enviar</button>
           </div>
         </Col>
       </Row>
