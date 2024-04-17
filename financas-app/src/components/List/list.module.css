@@ -1,29 +1,96 @@
 .list {
     list-style-type: none;
+    width: 100%;
     margin-top: 10px;
-    margin-left: -30px;
+    margin-left: -15px;
 }
+
+.item .valor {
+    max-width: 100px; 
+    overflow-wrap: break-word; 
+    width: 100px;
+}
+
+.item .descricao {
+    width: 90px;
+    max-width: 90px; 
+    overflow-wrap: break-word; 
+    padding-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 
 .item {
-    font-size: 14px;
-    color: white;
-    height: 40px;
-    background-color: #12343b;
-    border-radius: 8px;
-    position: relative;
-    margin-top: 10px;
-}
-
-.texto {
-    padding-left: 10px;
-    margin-right: 10px;
-}
-
-.item .info {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    top: 25%;
-    position: absolute;
-    width: 100%;
+    background-color: #12343b;
+    border-radius: 0 10px 10px 10px;
+    padding: 10px;
+    margin-top: 5px;
+    color: white;
+    position: relative;
 }
+
+.item .botoesTask {
+    padding-right: 5px;
+    display: flex;
+    gap: 5px;
+    margin-left: 10px;
+}
+
+.item .tipo {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.item .excluiritem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    background-color: #d41010e3;
+    color: #fff;
+    border: 0.2px solid #d41010e3;
+    border-radius: 6px;
+    font-size: 18px;
+    padding-top: -66px;
+    cursor: pointer;
+}
+
+.item .editaritem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    background-color: #c89666;
+    color: white;
+    border: 0.2px solid #c89666;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.form-control-color, .item {
+    align-items: center;
+    display: flex;
+}
+
+.item .excluiritem:hover {
+    background-color: #d41010c3;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.item .editaritem:hover {
+    background-color: #c89566b4;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}   

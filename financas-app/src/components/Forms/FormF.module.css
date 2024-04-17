@@ -1,5 +1,6 @@
 .preencher {
-  color: #232323;
+  color: white;
+  background-color: #12343b;
   outline: none;
   width: 48%;
   margin: 3px 3px;
@@ -11,6 +12,7 @@
 
 .preencher::placeholder{
   padding-left: 0px;
+  color: rgba(255, 255, 255, 0.348);
 }
 
 .radioinput {
@@ -37,6 +39,17 @@
   justify-content: flex-end;
 }
 
+.botao {
+  background-color: #12343b ;
+  border: none;
+  border-radius: 12px;
+  padding: 6px 10px;
+  color: white;
+}
+
+.botao:hover {
+  background-color: #19505b;
+}
 
 @media (max-width: 992px) {
   .choices {
