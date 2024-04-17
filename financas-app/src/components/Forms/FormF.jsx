@@ -12,13 +12,14 @@ const FormF = ({ adicionarItem }) => {
   const [valor, setValor] = useState('');
   const [descricao, setDescricao] = useState('');
   const [tipo, setTipo] = useState('Entrada');
-
+  const [editando, setEditando] = useState(false);
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     if (valor.trim() === "") {
       alert("Por favor, preencha o campo 'valor'.");
     } else {
-      const novoItem = { valor, descricao, tipo };
+      const novoItem = { valor, descricao, tipo, editando};
       adicionarItem(novoItem);
       setValor('');
       setDescricao('');
@@ -47,7 +48,7 @@ const FormF = ({ adicionarItem }) => {
           </Col>
 
           <Col sm={12} md={3} lg={3}>
-            <div className={styles.envio}>
+            <div className={styles.envio}> 
               <button className={styles.botao} type="submit">Enviar</button>
             </div>
           </Col>

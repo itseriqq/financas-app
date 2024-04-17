@@ -21,6 +21,52 @@ const Home = () => {
     setListaItens([...listaItens, novoItem]);
   };
 
+  const handleEditarItem = (event, item) => {
+    const updatedItems = listaItens.map((i) => {
+      if (i === item) {
+        return { ...i, editando: !i.editando };
+      }
+      return i;
+    });
+    setListaItens(updatedItems);
+  };
+  
+  const handleEditarValor = (event, item) => {
+    const updatedItems = listaItens.map((i) => {
+      if (i === item) {
+        return { ...i, valor: event.target.value };
+      }
+      return i;
+    });
+    setListaItens(updatedItems);
+  };
+
+  const handleEditarDescricao = (event, item) => {
+    const updatedItems = listaItens.map((i) => {
+      if (i === item) {
+        return { ...i, descricao: event.target.value };
+      }
+      return i;
+    });
+    setListaItens(updatedItems);
+  };
+
+  const handleEditarTipo= (event, item) => {
+    const updatedItems = listaItens.map((i) => {
+      if (i === item) {
+        return { ...i, tipo: event.target.value };
+      }
+      return i;
+    });
+    setListaItens(updatedItems);
+  };
+
+  const handleExcluirItem = (event, item) => {
+    const updatedItems = listaItens.filter((i) => i !== item);
+    setListaItens(updatedItems);
+  };
+
+
   const calcularEntradas = () => {
     const entradasTotal = listaItens.reduce((total, item) => {
       if (item.tipo === 'Entrada') {
@@ -62,7 +108,7 @@ const Home = () => {
         </Row>
       </Container>
       <FormF adicionarItem={adicionarItem} />
-      <List itens={listaItens} />
+      <List itens={listaItens} handleEditarItem={handleEditarItem} handleEditarValor={handleEditarValor} handleEditarDescricao={handleEditarDescricao} handleExcluirItem={handleExcluirItem} />
 
     </div>
 
