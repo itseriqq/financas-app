@@ -7,7 +7,6 @@ import Status from '@/components/Status/Status'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { FiTrendingUp, FiTrendingDown, FiDollarSign } from "react-icons/fi"; // Importando outros ícones
 import './globals.css'
 import styles from './page.module.css'
 import List from '@/components/List/List'
@@ -30,15 +29,28 @@ const Home = () => {
     });
     setListaItens(updatedItems);
   };
-  
+
   const handleEditarValor = (event, item) => {
-    const updatedItems = listaItens.map((i) => {
-      if (i === item) {
-        return { ...i, valor: event.target.value };
+    const newValue = event.target.value;
+  
+    if (!isNaN(newValue) || newValue === '') {
+      
+      if (newValue === '') {
+        const confirmDelete = window.confirm("Tem certeza de que deseja excluir este item?");
+        if (confirmDelete) {
+          const updatedItems = listaItens.filter((i) => i !== item);
+          setListaItens(updatedItems);
+        }
+      } else {
+        const updatedItems = listaItens.map((i) => {
+          if (i === item) {
+            return { ...i, valor: newValue };
+          }
+          return i;
+        });
+        setListaItens(updatedItems);
       }
-      return i;
-    });
-    setListaItens(updatedItems);
+    }
   };
 
   const handleEditarDescricao = (event, item) => {
@@ -51,7 +63,7 @@ const Home = () => {
     setListaItens(updatedItems);
   };
 
-  const handleEditarTipo= (event, item) => {
+  const handleEditarTipo = (event, item) => {
     const updatedItems = listaItens.map((i) => {
       if (i === item) {
         return { ...i, tipo: event.target.value };
@@ -99,16 +111,16 @@ const Home = () => {
   return (
     <div className={styles.pageContainer}>
       <Header></Header>
-      
+
       <Container>
         <Row className='mt-3'>
-          <Status titulo="Entradas" valor={`R$ ${calcularEntradas()}`} Icone={FiTrendingUp} />
-          <Status titulo="Saídas" valor={`R$ ${calcularSaidas()}`} Icone={FiTrendingDown} />
-          <Status titulo="Total" valor={`R$ ${calcularTotal()}`} Icone={FiDollarSign} />
+          <Status titulo="Entradas" valor={`R$ ${calcularEntradas()}`} />
+          <Status titulo="Saídas" valor={`R$ ${calcularSaidas()}`} />
+          <Status titulo="Total" valor={`R$ ${calcularTotal()}`} />
         </Row>
       </Container>
-      <FormF adicionarItem={adicionarItem} />
-      <List itens={listaItens} handleEditarItem={handleEditarItem} handleEditarValor={handleEditarValor} handleEditarDescricao={handleEditarDescricao} handleExcluirItem={handleExcluirItem} />
+      <FormF adicionarItem={adicionarItem} handleEditarTipo={handleEditarTipo} />
+      <List itens={listaItens} handleEditarItem={handleEditarItem} handleEditarValor={handleEditarValor} handleEditarDescricao={handleEditarDescricao} handleExcluirItem={handleExcluirItem} handleEditarTipo={handleEditarTipo} />
 
     </div>
 

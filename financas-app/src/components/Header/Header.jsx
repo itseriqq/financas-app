@@ -11,7 +11,7 @@ const Header = () => {
         <div>
             <Container>
                 <Row>
-                    <Col>
+                    <Col className='text-center'>
                         <div className={styles.header}>
                             <h1>Gerenciador de Finanças</h1>
                             <a href="itseriqq.github.io/portfolio">Erick.dev</a>

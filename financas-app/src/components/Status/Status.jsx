@@ -1,10 +1,5 @@
 import '@/app/globals.css'
-<<<<<<< HEAD
-import styles from './status.module.css'
-=======
 import styles from './Status.module.css'
-import Container from 'react-bootstrap/Container';
->>>>>>> f3a209c83e4128d9702695d7370c703add312d0f
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -30,13 +25,6 @@ const Status = ({ titulo, valor, Icone }) => {
             <div>
               <h2>{valor}</h2>
             </div>
-          </Col>
-        </Row>
-        <Row className='text-center'>
-          <Col md={12}>
-
-            {Icone && <Icone />}
-
           </Col>
         </Row>
       </div>
