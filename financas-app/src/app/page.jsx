@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import FormF from '@/components/Forms/FormF'
 import Status from '@/components/Status/Status'
@@ -14,7 +14,17 @@ import Header from '@/components/Header/Header'
 
 const Home = () => {
 
-  const [listaItens, setListaItens] = useState([]);
+  const [listaItens, setListaItens] = useState(() => {
+    // Tentar recuperar itens do localStorage ao iniciar
+    const savedItems = localStorage.getItem('listaItens');
+    return savedItems ? JSON.parse(savedItems) : [];
+  });
+
+  useEffect(() => {
+    // Salvar a lista de itens no localStorage sempre que ela mudar
+    localStorage.setItem('listaItens', JSON.stringify(listaItens));
+  }, [listaItens]);
+
 
   const adicionarItem = (novoItem) => {
     setListaItens([...listaItens, novoItem]);
