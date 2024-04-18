@@ -15,14 +15,17 @@ import Header from '@/components/Header/Header'
 const Home = () => {
 
   const [listaItens, setListaItens] = useState(() => {
-    // Tentar recuperar itens do localStorage ao iniciar
-    const savedItems = localStorage.getItem('listaItens');
-    return savedItems ? JSON.parse(savedItems) : [];
+    if (typeof window !== "undefined") {
+      const savedItems = localStorage.getItem('listaItens');
+      return savedItems ? JSON.parse(savedItems) : [];
+    }
+    return [];
   });
 
   useEffect(() => {
-    // Salvar a lista de itens no localStorage sempre que ela mudar
-    localStorage.setItem('listaItens', JSON.stringify(listaItens));
+    if (typeof window !== "undefined") {
+      localStorage.setItem('listaItens', JSON.stringify(listaItens));
+    }
   }, [listaItens]);
 
 
